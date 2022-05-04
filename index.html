@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA & NEWS | API</title>
+
+    <!-- link to css and normalize -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- link to javascript file -->
+    <script src="./js/nasa-news.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- links to the original API pages on find in the image links below or below in the main -->
+        <div>
+            <!-- images credits: https://www.nasa.gov/audience/forstudents/5-8/features/symbols-of-nasa.html -->
+            <a href="https://api.nasa.gov/"><img src="img/nasa-logo.png" alt="Nasa logo" /></a>
+        </div>
+        <div>
+            <h1>NASA & NEWS API Demo</h1>
+        </div>
+        <div>
+            <!-- image credits: https://www.pngfind.com/download/TiobhRb_symbol-new-york-times-new-york-times-app/ -->
+            <a href="https://developer.nytimes.com/docs/top-stories-product/1/overview"><img src="img/ny-times-logo.png" alt="News logo" /></a>
+        </div>
+    </header>
+    <main>
+        <h2>NASA's Astronomy Picture of the day API</h2>
+        <p>How it works...</p>
+        <p id="demoPara">The API takes data based on the current date and can be used to be displayed here. The data that will be used
+            for this application are: the <strong>image</strong>, the <strong>date</strong>, the
+            <strong>description</strong>, and the image <strong>title</strong>.</p>
+        <div class="displayNasa">
+            <!-- empty div used for a background image of the photo -->
+            <div class="nasaImage"></div>
+            <div>
+                <h3 id="nasaTitle"></h3>
+                <h3 id="nasaDate"></h3>
+            </div>
+            <p id="nasaDescription"></p>
+            <div>
+                <a href="https://api.nasa.gov/">Courtesy of NASA</a>
+            </div>
+        </div>
+        <!-- displays the top news story on the current day -->
+        <div class="transition">
+            <p >Now lets see what's happening down on Earth during the same day...</p>
+        </div>
+        <h2>New York Times Top Story API</h2>
+        <p id="demoPara">This is the New York Times API that will allow us to display the top news story of the day. The data that will be used are: the <strong>headline</strong>, the <strong>thumbnail</strong>, the <strong>link</strong> to the full article, and the <strong>author</strong> of the article.</p>
+        <div class="displayNews">
+            <h3 id="newsTitle"></h3>
+            <div class="newsImage"></div>
+            <div>
+                <p id="newsAuthor"></p>
+                <a href="" id="newsLink">View Article</a>
+            </div>
+            <div>
+                <a href="https://developer.nytimes.com/docs/top-stories-product/1/overview">Courtesy of N.Y Times</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Comp1073 | Assignment 4</p>
+    </footer>
+</body>
+
+</html>
