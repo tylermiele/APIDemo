@@ -1,134 +1,235 @@
-html{
+/* general styling */
+:root {
+    --backdrop: #222222;
+    --black: #0e0e0e;
+    --blue: #bbdefb;
+    --darkblue: #0288d1;
+    --white: #f4f4f4;
+}
+
+html {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 300ms ease-in;
+}
+main{
+    overflow: hidden;
+}
+.background {
+    font-family: 'Titillium Web', sans-serif;
+    color: var(--blue);
+    background: linear-gradient(45deg, var(--backdrop), var(--black));
+    opacity: 0.9;
+    padding: 1em 2em;
+    text-shadow: 0 0 0.5em var(--blue);
+    box-shadow: inset 0 0 0.75em 0 var(--blue), 0 0 0.5em 0 var(--blue);
+    border: var(--blue) 0.125em solid;
+    border-radius: 10px;
+}
+
+.alt-bg {
+    border: none;
+    margin: 2em auto;
+    width: 50%;
+    box-shadow: -5px 5px 0.75em 0 var(--blue);
+    transition: color 300ms, border 300ms, box-shadow 300ms ease-in;
+}
+
+.alt-bg2 {
+    padding: 0em 1.3em;
+    border-radius: 15px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+strong {
+    color: var(--darkblue);
 }
 
 /* styles for the header */
-header{
+header, footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 125px;
-    width: 100%;
-    background-color: #1a237e;
-    color: #f4f4f4;
-    padding: 2em 0;
-}
-header > div:nth-child(odd){
-    height: 115px;
-}
-header > div:nth-child(even){
-    margin-left: -100px;
-}
-header > div:nth-child(odd) > a > img{
-    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    background: linear-gradient(45deg, var(--backdrop), var(--black));
+    padding: 2em;
+    border-bottom: 2px solid var(--blue);
+    color: var(--blue);
+
 }
 
 /* styles for the main */
-main h2{
-    font-size: 2em;
-    color: #3f51b5;
+.alt-bg>h3 {
+    font-size: 1.8rem;
 }
-main p{
-    font-size: 1.5em;
+
+.alt-bg>p {
+    text-shadow: none;
+    font-size: 1.5rem;
 }
-main #demoPara{
-    width: 70%;
-    margin: 0 auto;
+
+.logos-container {
+    display: flex;
+    justify-content: center;
 }
-main strong{
-    color: red;
+.toNews{
+    border-color: var(--white);
+    box-shadow: inset 0 0 0.75em 0 var(--white), 0 0 0.5em 0 var(--white);
+}
+.divider {
+    background-color: var(--white);
+    width: 4px;
+    border-radius: 5px;
+    margin: 2em;
+}
+
+.nasa-logo, .ny-logo {
+    position: relative;
+    background-image: url('../img/nasa-logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 120px;
+    margin: 1em 0;
+}
+
+.ny-logo {
+    background-image: url('../img/ny-logo.png');
+}
+
+.logo {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 300ms, box-shadow 300ms ease-in;
+}
+
+.logo:hover {
+    opacity: 1;
+    box-shadow: inset 0 0 1em 0 var(--blue), 0 0 1em 0 var(--blue);
 }
 
 /* styles for the nasa data */
-.displayNasa{
-    padding: 3em;
+.nasa-container, .news-container {
+    margin: 2em 5em;
+    transition: opacity 300ms, color 300ms, background 300ms ease-in;
 }
-.nasaImage{
-    width: 650px;
-    height: 750px;
-    margin: 0 auto;
-    border: 2px solid #1a237e;
-    border-radius: 5px;
+.news-container{
+    color: var(--white);
+    text-shadow: 0 0 0.5em var(--white);
+    border-color: var(--white);
+    box-shadow: inset 0 0 0.75em 0 var(--white), 0 0 0.5em 0 var(--white);
 }
-.displayNasa > div{
+.heading-container, .title-container {
     display: flex;
-    justify-content: space-evenly;
-}
-.displayNasa > div:last-child{
-    padding-top: 1.5em;
-}
-.displayNasa > div:last-child a, .displayNews > div:last-child a{
-    color: grey;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-.displayNasa > div:last-child a:hover, .displayNews > div:last-child a:hover{
-    text-decoration: underline;
-}
-#nasaTitle{
-    font-size: 1.65em;
-    color: #3f51b5;
-}
-#nasaDate{
-    font-size: 1.65em;
-    color: red;
-}
-#nasaDescription{
-    font-size: 1.3em;
-    line-height: 1.25em;
+    justify-content: space-around;
+
+    padding-top: 2em;
 }
 
-/* styles for the news data */
-.displayNews{
-    padding: 2em;
+.heading-container>h2 {
+    font-size: 3rem;
+    width: 30%;
 }
-.displayNews > div{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+
+.nasaImage, .newsImage {
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    box-shadow: inset 0 0 0.75em 0 var(--blue), 0 0 0.5em 0 var(--blue);
+    border: var(--blue) 0.125em solid;
+    border-radius: 15px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    transition: background-image 300ms ease-in;
 }
-.displayNews .newsImage{
-    width: 450px;
-    height: 500px;
-    margin: 0 auto;
-    border: 2px solid #1a237e;
-    border-radius: 5px;
+.newsImage{
+    box-shadow: inset 0 0 0.75em 0 var(--white), 0 0 0.5em 0 var(--white);
 }
-#newsTitle{
-    font-size: 1.65em;
+
+.title-container {
+    font-size: 1.5rem;
+    color: var(--darkblue);
+    text-shadow: none;
+    margin-right: 17em;
+    margin-top: -4.5em;
+    text-shadow: 0 0 0.5em var(--darkblue);
+
 }
-#newsLink{
-    color: red;
-    font-size: 1.3em;
+
+.para-container {
+    padding: 0.5em 4em 2em 4em;
+}
+
+#nasaDescription {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    background: transparent;
+    color: var(--blue);
+    text-shadow: none;
+}
+
+.content-container>h3 {
+    font-size: 2rem;
+}
+
+#newsTitle {
+    color: var(--blue);
+    text-shadow: 0 0 0.5em var(--blue);
+}
+
+.news-link-container {
+    margin: 5em;
+}
+
+#newsLink {
+    color: var(--white);
+    font-size: 1.3rem;
+    padding: 1em;
     text-decoration: none;
+    border-color: var(--white);
 }
 #newsLink:hover{
-    text-decoration: underline;
+    opacity: 1;
+    box-shadow: inset 0 0 1em 0 var(--blue), 0 0 1em 0 var(--blue);
+
 }
-#newsAuthor{
-    font-size: 1.3em;
+.link {
+    padding-bottom: 2em;
 }
 
-/* styles for the middle block */
-.transition{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1a237e;
-    height: 150px;
-    color: #f4f4f4;
+.link a {
+    position: relative;
+    color: var(--darkblue);
+    text-shadow: none;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
-.transition > p{
-    font-size: 1.7em;
-}
-/* styles for footer */
-footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1a237e;
-    color: #f4f4f4;
+
+.link a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 80px;
+    height: 0.075em;
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+.link a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+footer {
+    border: none;
 }
