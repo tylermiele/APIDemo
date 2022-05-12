@@ -72,7 +72,7 @@ fetch(newsUrl).then(response => {
 
 toNasa();
 function toNasa() {
-    html.style.backgroundImage = "url('../img/stars.jpg')";
+    html.style.backgroundImage = "url('img/stars.jpg')";
     header.style.color = 'var(--blue)';
     header.style.borderColor = 'var(--blue)';
     footer.style.color = 'var(--blue)';
@@ -106,7 +106,7 @@ function toNasa() {
 }
 
 function toNews() {
-    html.style.backgroundImage = "url('../img/paper.jpg')";
+    html.style.backgroundImage = "url('img/paper.jpg')";
     header.style.color = 'var(--white)';
     header.style.borderColor = 'var(--white)';
     footer.style.color = 'var(--white)';
